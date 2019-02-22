@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Result from './Result'
 
-class Message extends Component {
+class Message extends React.Component {
   state = {
     textMsg: "",
     codedMsg: "",
@@ -12,8 +12,7 @@ class Message extends Component {
   }
 
   setCode = (e) => {
-    this.setState({ codedMsg: e.target.value},
-                 console.log(this.state.codedMsg));
+    this.setState({ codedMsg: e.target.value});
   }
 
   render() {

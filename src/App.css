@@ -16,7 +16,7 @@ font-family: 'Rammetto One', cursive;
 
 main {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-image: url(https://images.unsplash.com/photo-1528458965990-428de4b1cb0d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
   display: flex;
   flex-direction: column;
@@ -25,14 +25,14 @@ main {
 
 header {
   width: 100%;
-  padding: 15px;
+  padding: 20px 15px 15px;
   display: flex;
   justify-content: center;
   background-color: var(--dark-brown);
 }
 
 h1 {
-  margin: 5px 0 0;
+  margin: 0;
   font-family: var(--typewriter);
   font-size: 3.3rem;
   letter-spacing: -8px;
@@ -73,11 +73,10 @@ textarea {
   justify-content: space-around;
 }
 .result-container {
-  width: 315px;
-  height: 200px;
   font-size: 1.4rem;
   padding: 10px;
   margin: 0 10px 10px;
+  overflow: auto;
   background-color: var(--dirty-white);
   box-shadow: inset 1px 1px 0 black;
 }
@@ -94,7 +93,7 @@ textarea {
   border: var(--dark-brown);
   box-shadow: 1px 1px 3px black;
   padding: 11px 20px 7px;
-  margin: 0 10px;
+   margin: 10px;
   font-family: var(--typewriter);
   font-size: 1.3rem;
   outline-color: var(--dirty-white);

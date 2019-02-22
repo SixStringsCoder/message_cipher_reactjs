@@ -2,7 +2,13 @@ import React from 'react';
 
 const Result = ({msg}) => {
     return (
-      <div className="result-container">{msg}</div>
+      <textarea name="text_code"
+                id="msgDecodedArea"
+                cols="20"
+                rows="10"
+                className="result-container"
+                value={msg}>
+      </textarea>
     )
 }
 
