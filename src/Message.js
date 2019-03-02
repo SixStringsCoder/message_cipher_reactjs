@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Result from './Result'
 
-class Message extends React.Component {
+class Message extends Component {
   state = {
     textMsg: "",
     codedMsg: "",
@@ -15,8 +15,23 @@ class Message extends React.Component {
     this.setState({ codedMsg: e.target.value});
   }
 
-  render() {
+  copyCode = (e) => {
+    let coded = document.querySelector('#msgDecodedArea');
+    coded.select(e.target.value);
+    document.execCommand('copy');
+  };
 
+  clearCode = () => {
+    let textarea = document.querySelectorAll('textarea');
+    textarea.forEach(textbox => {
+      this.setState({
+        textMsg: "",
+        codedMsg: "",
+      })
+    })
+  }
+
+  render() {
     const { textMsg, codedMsg } = this.state;
     const { set_msg_encode,
             set_msg_decode,
@@ -52,9 +67,18 @@ class Message extends React.Component {
           <button id="encodeBtn"
                   className="btn"
                   onClick={() => set_msg_encode(textMsg)}>Encode</button>
+
+          <button id="copyEncodeBtn"
+                  className="btn"
+                  onClick={this.copyCode}>Copy Code</button>
+
           <button id="decodeBtn"
                   className="btn"
                   onClick={() => set_msg_decode(codedMsg)}>Decode</button>
+
+          <button id="clearBtn"
+                  className="btn"
+                  onClick={this.clearCode}>Clear</button>
         </section>
 
       </div>
