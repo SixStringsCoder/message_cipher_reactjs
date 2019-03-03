@@ -23,6 +23,7 @@ class Message extends Component {
 
   clearCode = () => {
     let textarea = document.querySelectorAll('textarea');
+    this.props.clear_msgs();
     textarea.forEach(textbox => {
       this.setState({
         textMsg: "",
@@ -66,21 +67,24 @@ class Message extends Component {
         <section id="btnArea">
           <button id="encodeBtn"
                   className="btn"
-                  onClick={() => set_msg_encode(textMsg)}>Encode</button>
+                  onClick={() => set_msg_encode(textMsg)}>
+                  Encode</button>
 
           <button id="copyEncodeBtn"
                   className="btn"
-                  onClick={this.copyCode}>Copy Code</button>
+                  onClick={this.copyCode}>
+                  Copy Code</button>
 
           <button id="decodeBtn"
                   className="btn"
-                  onClick={() => set_msg_decode(codedMsg)}>Decode</button>
+                  onClick={() => set_msg_decode(codedMsg)}>
+                  Decode</button>
 
           <button id="clearBtn"
                   className="btn"
-                  onClick={this.clearCode}>Clear</button>
+                  onClick={this.clearCode}>
+                  Clear</button>
         </section>
-
       </div>
     )
   }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Message from './Message'
 
-class Cipher extends React.Component{
+class Cipher extends Component{
   state = {
     msg_to_encode: [],
     msg_to_decode: [],
@@ -40,6 +40,12 @@ class Cipher extends React.Component{
     });
   }
 
+  clear_messages = () => {
+    this.setState({
+      encoded_to_screen: "",
+      decoded_to_screen: ""
+    })
+  }
 
   render() {
     return (
@@ -51,7 +57,8 @@ class Cipher extends React.Component{
                  set_msg_decode={this.set_msg_decode}
                  encoded_msg={this.state.encoded_to_screen}
                  decoded_msg={this.state.decoded_to_screen}
-                  />
+                 clear_msgs={this.clear_messages}
+                 />
       </main>
     )
   }
